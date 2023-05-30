@@ -51,7 +51,7 @@ arg_parser.add_argument("--num_worker",
 args = arg_parser.parse_args()
 
 #load the model sakt_all.pth
-MODEL_PATH = "./sakt_weights.pth"
+MODEL_PATH = "./saved/sakt_weights.pth"
 model = SAKTModel(args.num_skill, args.embed_dim, args.dropout, args.num_heads, max_len=128)
 model.load_state_dict(torch.load(MODEL_PATH))
 model.eval()
@@ -92,7 +92,3 @@ def query(prev_qid, prev_correct, cur_qid):
     logits = torch.sigmoid(logits)
     prob = logits[0][len(prev_qid)].detach().numpy()
     return int(prob * 100)
-
-prev_id = [60, 60, 60, 32]
-prev_correct = [1, 0, 1, 0]
-print(query(prev_id, prev_correct, 32))
