@@ -1,1 +1,1 @@
-For technical reports and implementation, please see `report.ipynb`
+For technical report and implementation, please see `report.ipynb`
