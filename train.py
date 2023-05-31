@@ -55,7 +55,7 @@ def run(args):
 
 
 if __name__ == "__main__":
-    arg_parser = argparse.ArgumentParser(description="train deep IRT model")
+    arg_parser = argparse.ArgumentParser(description="train your SAKT model")
     arg_parser.add_argument("--learning_rate",
                             dest="learning_rate",
                             default=0.001,
